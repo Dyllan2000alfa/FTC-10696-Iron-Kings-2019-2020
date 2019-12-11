@@ -7,8 +7,8 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
-@TeleOp(name="TeleOp", group="TeleOp")
-public class IronKingsTeleOp extends OpMode {
+@TeleOp(name="TeleOp Full Speed", group="TeleOp")
+public class IronKingsTeleOpFullSpeed extends OpMode {
 
     IronKingsHardwareMap robot = new IronKingsHardwareMap();
 
@@ -20,8 +20,8 @@ public class IronKingsTeleOp extends OpMode {
 
     public void loop() {
 
-        robot.leftMotor.setPower(-gamepad1.left_stick_y / 2);
-        robot.rightMotor.setPower(-gamepad1.right_stick_y / 2);
+        robot.leftMotor.setPower(-gamepad1.left_stick_y);
+        robot.rightMotor.setPower(-gamepad1.right_stick_y);
 
         robot.armMotor.setPower(gamepad2.right_stick_y / 2);
 

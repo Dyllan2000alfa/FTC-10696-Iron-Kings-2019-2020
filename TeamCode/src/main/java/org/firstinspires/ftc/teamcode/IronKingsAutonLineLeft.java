@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-@Autonomous(name="Stop Left", group="Stop on Line")
+@Autonomous(name="Stop on line, Left", group="Stop on Line")
 public class IronKingsAutonLineLeft extends LinearOpMode {
 
     IronKingsHardwareMap robot = new IronKingsHardwareMap();
