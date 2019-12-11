@@ -4,15 +4,13 @@
 
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
+
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-@Disabled
-@Autonomous
-
-public class IronKingsAuton extends LinearOpMode {
+@Autonomous(name="Stop Right", group="Stop on Line")
+public class IronKingsAutonLineRight extends LinearOpMode {
 
     IronKingsHardwareMap robot = new IronKingsHardwareMap();
     private ElapsedTime runtime = new ElapsedTime();
@@ -37,7 +35,7 @@ public class IronKingsAuton extends LinearOpMode {
         runtime.reset();
         robot.stop();
 
-        robot.turnLeft(0.25);
+        robot.turnRight(0.25);
         while (opModeIsActive() && (runtime.seconds() < 1.65)) {
             telemetry.addData("Path", "Leg 1: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();

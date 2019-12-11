@@ -7,39 +7,38 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
-@TeleOp
-public class IronKingsTeleOpTest extends OpMode
-{
+@TeleOp(name="TeleOp 1 Controller", group="Testing")
+public class IronKingsTeleOpTest extends OpMode {
+
     IronKingsHardwareMap robot = new IronKingsHardwareMap();
 
     @Override
-    public void init()
-    {
+    public void init() {
 
         robot.init(hardwareMap);
     }
 
-    public void loop()
-    {
-        robot.left.setPower(gamepad1.left_stick_y);
-        robot.right.setPower(gamepad1.right_stick_y);
+    public void loop() {
 
-        robot.arm.setPower(gamepad1.right_trigger - gamepad2.left_trigger);
+        robot.leftMotor.setPower(-gamepad1.left_stick_y);
+        robot.rightMotor.setPower(-gamepad1.right_stick_y);
 
-        if (gamepad2.right_bumper) {
+        robot.armMotor.setPower(gamepad1.left_trigger - gamepad1.right_trigger);
 
-            robot.sRight.setPosition(0);
-            robot.sLeft.setPosition(1);
+        if (gamepad1.right_bumper) {
+
+            robot.rightServo.setPosition(0);
+            robot.leftServo.setPosition(1);
         }
         else {
 
-            robot.sRight.setPosition(1);
-            robot.sLeft.setPosition(0);
+            robot.rightServo.setPosition(1);
+            robot.leftServo.setPosition(0);
         }
     }
 
-    public void stop()
-    {
+    public void stop() {
+
         robot.stop();
     }
 }

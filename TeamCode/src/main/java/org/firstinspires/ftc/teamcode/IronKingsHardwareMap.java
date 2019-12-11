@@ -4,45 +4,72 @@
 
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
-public class IronKingsHardwareMap
-{
+public class IronKingsHardwareMap {
 
-    DcMotor left, right, arm;
-    Servo sLeft, sRight;
+    DcMotor leftMotor, rightMotor, armMotor;
+    Servo leftServo, rightServo;
 
-    public void init(HardwareMap hwMap)
-    {
-        right = hwMap.dcMotor.get("ri");
-        left = hwMap.dcMotor.get("le");
-        arm = hwMap.dcMotor.get("arm");
-        sRight = hwMap.servo.get("sri");
-        sLeft = hwMap.servo.get ("sle");
+    public void init(HardwareMap hwMap) {
 
-        right.setDirection(DcMotor.Direction.REVERSE);
-        arm.setDirection(DcMotor.Direction.REVERSE);
+        rightMotor = hwMap.dcMotor.get("rm");
+        leftMotor = hwMap.dcMotor.get("lm");
+        armMotor = hwMap.dcMotor.get("am");
+        rightServo = hwMap.servo.get("rs");
+        leftServo = hwMap.servo.get ("ls");
 
-        right.setPower(0);
-        left.setPower(0);
+        leftMotor.setDirection(DcMotor.Direction.REVERSE);
+        armMotor.setDirection(DcMotor.Direction.REVERSE);
 
-        sRight.setPosition(1);
-        sLeft.setPosition(0);
+        rightMotor.setPower(0);
+        leftMotor.setPower(0);
+
+        rightServo.setPosition(1);
+        leftServo.setPosition(0);
     }
 
-    public void stop()
-    {
-        right.setPower(0);
-        left.setPower(0);
+    public void stop() {
+
+        rightMotor.setPower(0);
+        leftMotor.setPower(0);
     }
 
-    public void forward()
-    {
+    public void forward(double speed) {
 
+        rightMotor.setPower(speed);
+        leftMotor.setPower(speed);
     }
 
+    public void reverse(double speed) {
 
+        rightMotor.setPower(-speed);
+        leftMotor.setPower(-speed);
+    }
+
+    public void turnRight(double speed) {
+
+        rightMotor.setPower(-speed);
+        leftMotor.setPower(speed);
+    }
+
+    public void turnLeft(double speed) {
+
+        rightMotor.setPower(speed);
+        leftMotor.setPower(-speed);
+    }
+
+    public void closeClaw() {
+
+        rightServo.setPosition(0);
+        leftServo.setPosition(1);
+    }
+
+    public void openClaw() {
+
+        rightServo.setPosition(1);
+        leftServo.setPosition(0);
+    }
 }
