@@ -23,6 +23,9 @@ public class IronKingsHardwareMap {
 
         leftMotor.setDirection(DcMotor.Direction.REVERSE);
 
+        leftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        rightMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
         rightMotor.setPower(0);
         leftMotor.setPower(0);
 
