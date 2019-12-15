@@ -23,7 +23,7 @@ public class IronKingsTeleOpTest extends OpMode {
         robot.leftMotor.setPower(-gamepad1.left_stick_y);
         robot.rightMotor.setPower(-gamepad1.right_stick_y);
 
-        robot.armMotor.setPower(gamepad1.left_trigger - gamepad1.right_trigger);
+        robot.armMotor.setPower(gamepad1.right_trigger - gamepad1.left_trigger);
 
         if (gamepad1.right_bumper) {
 

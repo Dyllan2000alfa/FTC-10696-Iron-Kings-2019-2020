@@ -22,7 +22,6 @@ public class IronKingsHardwareMap {
         leftServo = hwMap.servo.get ("ls");
 
         leftMotor.setDirection(DcMotor.Direction.REVERSE);
-        armMotor.setDirection(DcMotor.Direction.REVERSE);
 
         rightMotor.setPower(0);
         leftMotor.setPower(0);
@@ -35,6 +34,7 @@ public class IronKingsHardwareMap {
 
         rightMotor.setPower(0);
         leftMotor.setPower(0);
+        armMotor.setPower(0);
     }
 
     public void forward(double speed) {
@@ -59,6 +59,16 @@ public class IronKingsHardwareMap {
 
         rightMotor.setPower(speed);
         leftMotor.setPower(-speed);
+    }
+
+    public void liftArm(double speed) {
+
+        armMotor.setPower(speed);
+    }
+
+    public void lowerArm(double speed) {
+
+        armMotor.setPower(-speed);
     }
 
     public void closeClaw() {

@@ -7,8 +7,8 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
-@TeleOp(name="TeleOp Half Speed", group="TeleOp")
-public class IronKingsTeleOpHalfSpeed extends OpMode {
+@TeleOp(name="TeleOp Three Quarter Speed", group="TeleOp")
+public class IronKingsTeleOpThreeQuarterSpeed extends OpMode {
 
     IronKingsHardwareMap robot = new IronKingsHardwareMap();
 
@@ -20,8 +20,8 @@ public class IronKingsTeleOpHalfSpeed extends OpMode {
 
     public void loop() {
 
-        robot.leftMotor.setPower(-gamepad1.left_stick_y / 2);
-        robot.rightMotor.setPower(-gamepad1.right_stick_y / 2);
+        robot.leftMotor.setPower(-gamepad1.left_stick_y / 1.5);
+        robot.rightMotor.setPower(-gamepad1.right_stick_y / 1.5);
 
         robot.armMotor.setPower(-gamepad2.right_stick_y / 2);
 

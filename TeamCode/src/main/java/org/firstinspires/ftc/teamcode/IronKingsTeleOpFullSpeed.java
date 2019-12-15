@@ -1,5 +1,5 @@
 /**
- * Created By Marbella Castillo 9/20/19 5:24 pm
+ * Created By Dyllan Tinoco 12/11/19
  */
 
 package org.firstinspires.ftc.teamcode;
@@ -23,7 +23,7 @@ public class IronKingsTeleOpFullSpeed extends OpMode {
         robot.leftMotor.setPower(-gamepad1.left_stick_y);
         robot.rightMotor.setPower(-gamepad1.right_stick_y);
 
-        robot.armMotor.setPower(gamepad2.right_stick_y / 2);
+        robot.armMotor.setPower(-gamepad2.right_stick_y / 2);
 
         if (gamepad2.right_trigger > .25) {
 

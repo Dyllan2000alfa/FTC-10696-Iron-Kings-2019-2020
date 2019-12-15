@@ -1,5 +1,5 @@
 /**
- * Created By Marbella Castillo 10/4/19 4:58pm
+ * Created By Dyllan Tinoco 12/11/19
  */
 
 package org.firstinspires.ftc.teamcode;
@@ -26,6 +26,15 @@ public class IronKingsAutonLineRight extends LinearOpMode {
 
         runtime.reset();
 
+        robot.liftArm(0.25);
+        while (opModeIsActive() && (runtime.seconds() < 2.0)) {
+            telemetry.addData("Path", "Leg 1: %2.5f S Elapsed", runtime.seconds());
+            telemetry.update();
+        }
+
+        runtime.reset();
+        robot.stop();
+
         robot.forward(0.5);
         while (opModeIsActive() && (runtime.seconds() < 1.35)) {
             telemetry.addData("Path", "Leg 1: %2.5f S Elapsed", runtime.seconds());
@@ -37,6 +46,15 @@ public class IronKingsAutonLineRight extends LinearOpMode {
 
         robot.turnRight(0.25);
         while (opModeIsActive() && (runtime.seconds() < 1.65)) {
+            telemetry.addData("Path", "Leg 1: %2.5f S Elapsed", runtime.seconds());
+            telemetry.update();
+        }
+
+        runtime.reset();
+        robot.stop();
+
+        robot.lowerArm(0.25);
+        while (opModeIsActive() && (runtime.seconds() < 2.0)) {
             telemetry.addData("Path", "Leg 1: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
