@@ -20,19 +20,7 @@ public class IronKingsTeleOpHalfSpeed extends OpMode {
 
     public void loop() {
 
-        robot.leftMotor.setPower(-gamepad1.left_stick_y / 2);
-        robot.rightMotor.setPower(-gamepad1.right_stick_y / 2);
-
-        robot.armMotor.setPower(-gamepad2.right_stick_y / 2);
-
-        if (gamepad2.right_trigger > .25) {
-
-            robot.closeClaw();
-        }
-        else {
-
-            robot.openClaw();
-        }
+        robot.driveControls(gamepad1.left_stick_y, gamepad1.right_stick_y, gamepad2.right_stick_y, gamepad2.right_trigger, 0.5);
     }
 
     public void stop() {

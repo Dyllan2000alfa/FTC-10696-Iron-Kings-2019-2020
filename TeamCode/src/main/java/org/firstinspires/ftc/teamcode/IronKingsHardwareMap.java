@@ -22,6 +22,7 @@ public class IronKingsHardwareMap {
         leftServo = hwMap.servo.get ("ls");
 
         leftMotor.setDirection(DcMotor.Direction.REVERSE);
+        rightServo.setDirection(Servo.Direction.REVERSE);
 
         leftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rightMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
@@ -31,6 +32,17 @@ public class IronKingsHardwareMap {
 
         rightServo.setPosition(1);
         leftServo.setPosition(0);
+    }
+
+    public void driveControls(double leftDrive, double rightDrive, double armDrive, double clawServo, double speed){
+
+        leftMotor.setPower(-leftDrive * speed);
+        rightMotor.setPower(-rightDrive * speed);
+
+        armMotor.setPower(-armDrive / 2);
+
+        leftServo.setPosition(clawServo);
+        rightServo.setPosition(clawServo);
     }
 
     public void stop() {
@@ -76,13 +88,14 @@ public class IronKingsHardwareMap {
 
     public void closeClaw() {
 
-        rightServo.setPosition(0);
+        rightServo.setPosition(1);
         leftServo.setPosition(1);
     }
 
     public void openClaw() {
 
-        rightServo.setPosition(1);
+        rightServo.setPosition(0);
         leftServo.setPosition(0);
     }
+
 }
