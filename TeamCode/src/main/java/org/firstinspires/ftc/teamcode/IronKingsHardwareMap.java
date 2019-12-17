@@ -30,7 +30,7 @@ public class IronKingsHardwareMap {
         rightMotor.setPower(0);
         leftMotor.setPower(0);
 
-        rightServo.setPosition(1);
+        rightServo.setPosition(0);
         leftServo.setPosition(0);
     }
 
