@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 //Define TeleOP Name and Group. Define class.
-@TeleOp(name="TeleOp Full Speed", group="TeleOp")
+@TeleOp(name="TeleOp Half Speed", group="TeleOp")
 public class IronKingsTeleOpHalfSpeed extends OpMode {
 
     //Link HardwareMap.

@@ -35,7 +35,7 @@ public class IronKingsAutonLineLeft extends LinearOpMode {
         robot.stop();
 
         robot.forward(0.5);
-        while (opModeIsActive() && (runtime.seconds() < 1.35)) {
+        while (opModeIsActive() && (runtime.seconds() < 2.35)) {
             telemetry.addData("Path", "Leg 1: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
@@ -44,7 +44,7 @@ public class IronKingsAutonLineLeft extends LinearOpMode {
         robot.stop();
 
         robot.turnLeft(0.25);
-        while (opModeIsActive() && (runtime.seconds() < 1.65)) {
+        while (opModeIsActive() && (runtime.seconds() < 3.5)) {
             telemetry.addData("Path", "Leg 1: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
@@ -65,7 +65,7 @@ public class IronKingsAutonLineLeft extends LinearOpMode {
         robot.stop();
 
         robot.forward(0.5);
-        while (opModeIsActive() && (runtime.seconds() < 1.35)) {
+        while (opModeIsActive() && (runtime.seconds() < 2.2)) {
             telemetry.addData("Path", "Leg 1: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
